@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainJanela</class>
+ <widget class="QMainWindow" name="MainJanela">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1090</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1090</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Menu Inicial</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1090</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuInicial">
+    <property name="title">
+     <string>Inicial</string>
+    </property>
+    <addaction name="actionInicio"/>
+   </widget>
+   <widget class="QMenu" name="menuTabelas">
+    <property name="title">
+     <string>Tabelas</string>
+    </property>
+    <addaction name="actionAlbuns"/>
+    <addaction name="actionArtistas"/>
+    <addaction name="actionGeneros"/>
+    <addaction name="actionHistoricoReproducao"/>
+    <addaction name="actionMusicas"/>
+    <addaction name="actionPlaylists"/>
+    <addaction name="actionMusicasPlaylist"/>
+    <addaction name="actionUsuarios"/>
+   </widget>
+   <addaction name="menuInicial"/>
+   <addaction name="menuTabelas"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInicio">
+   <property name="text">
+    <string>Inicio</string>
+   </property>
+  </action>
+  <action name="actionAlbuns">
+   <property name="text">
+    <string>Álbuns</string>
+   </property>
+  </action>
+  <action name="actionArtistas">
+   <property name="text">
+    <string>Artistas</string>
+   </property>
+  </action>
+  <action name="actionGeneros">
+   <property name="text">
+    <string>Gêneros</string>
+   </property>
+  </action>
+  <action name="actionHistoricoReproducao">
+   <property name="text">
+    <string>Histórico de Reprodução</string>
+   </property>
+  </action>
+  <action name="actionMusicas">
+   <property name="text">
+    <string>Músicas</string>
+   </property>
+  </action>
+  <action name="actionPlaylists">
+   <property name="text">
+    <string>Playlists</string>
+   </property>
+  </action>
+  <action name="actionMusicasPlaylist">
+   <property name="text">
+    <string>Músicas da Playlist</string>
+   </property>
+  </action>
+  <action name="actionUsuarios">
+   <property name="text">
+    <string>Usuários</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

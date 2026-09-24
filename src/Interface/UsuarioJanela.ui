@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>janelaUsuarios</class>
+ <widget class="QMainWindow" name="janelaUsuarios">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>860</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1090</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1090</width>
+    <height>860</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Usuários</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btnInserir">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>60</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Inserir</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAtualizar">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>110</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Atualizar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnPesquisar">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>160</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pesquisar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDeletar">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>210</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Deletar</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtNome">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>60</y>
+      <width>451</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtEmail">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>110</y>
+      <width>451</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtSenha">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>160</y>
+      <width>451</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateNascimento">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>210</y>
+      <width>123</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDateTimeEdit" name="dateCadastro">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>310</y>
+      <width>194</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboPlano">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>260</y>
+      <width>451</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Gratuito</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Básico</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Premium</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nome:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>110</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>E-mail:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>160</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Senha:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>210</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Data de nascimento:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>260</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plano:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>310</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Data de cadastro:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>360</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>19</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Usuários Cadastrados</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tabelaUsuarios">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>420</y>
+      <width>1001</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <column>
+     <property name="text">
+      <string>Nova coluna</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nome</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>E-mail</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nascimento</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Plano</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Cadastro</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="btnResetar">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>310</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Resetar Janela</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1090</width>
+     <height>33</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuInicial">
+    <property name="title">
+     <string>Inicial</string>
+    </property>
+    <addaction name="actionInicio"/>
+   </widget>
+   <widget class="QMenu" name="menuTabelas">
+    <property name="title">
+     <string>Tabelas</string>
+    </property>
+    <addaction name="actionAlbuns"/>
+    <addaction name="actionArtistas"/>
+    <addaction name="actionGeneros"/>
+    <addaction name="actionHistoricoReproducao"/>
+    <addaction name="actionMusicas"/>
+    <addaction name="actionPlaylists"/>
+    <addaction name="actionMusicasPlaylist"/>
+    <addaction name="actionUsuarios"/>
+   </widget>
+   <addaction name="menuInicial"/>
+   <addaction name="menuTabelas"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInicio">
+   <property name="text">
+    <string>Inicio</string>
+   </property>
+  </action>
+  <action name="actionAlbuns">
+   <property name="text">
+    <string>Álbuns</string>
+   </property>
+  </action>
+  <action name="actionArtistas">
+   <property name="text">
+    <string>Artistas</string>
+   </property>
+  </action>
+  <action name="actionGeneros">
+   <property name="text">
+    <string>Gêneros</string>
+   </property>
+  </action>
+  <action name="actionHistoricoReproducao">
+   <property name="text">
+    <string>Histórico de Reprodução</string>
+   </property>
+  </action>
+  <action name="actionMusicas">
+   <property name="text">
+    <string>Músicas</string>
+   </property>
+  </action>
+  <action name="actionPlaylists">
+   <property name="text">
+    <string>Playlists</string>
+   </property>
+  </action>
+  <action name="actionMusicasPlaylist">
+   <property name="text">
+    <string>Músicas da Playlist</string>
+   </property>
+  </action>
+  <action name="actionUsuarios">
+   <property name="text">
+    <string>Usuários</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

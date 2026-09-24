@@ -13,7 +13,7 @@ class Usuario(Tabela):
                 plano,
                 data_cadastro
             )
-            VALUES (%s, %s, %s, %s, %s, %s);
+            VALUES (%s, %s, %s, %s, %s, CURRENT_TIMESTAMP);
         """
 
         self.executar(sql, dados)
