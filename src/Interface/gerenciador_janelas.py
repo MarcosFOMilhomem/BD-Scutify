@@ -3,7 +3,15 @@ from pathlib import Path
 from PySide6.QtCore import QObject
 from PySide6.QtGui import QAction
 from PySide6.QtUiTools import QUiLoader
+
 from src.Interface.janelas.usuario_janela import UsuarioJanela
+from src.Interface.janelas.artista_janela import ArtistaJanela
+from src.Interface.janelas.genero_janela import GeneroJanela
+from src.Interface.janelas.playlist_janela import PlaylistJanela
+from src.Interface.janelas.album_janela import AlbumJanela
+from src.Interface.janelas.musica_janela import MusicaJanela
+from src.Interface.janelas.playlist_musica_janela import PlaylistMusicaJanela
+from src.Interface.janelas.historico_reproducao_janela import HistoricoReproducaoJanela
 
 class GerenciadorJanelas(QObject):
 
@@ -16,15 +24,14 @@ class GerenciadorJanelas(QObject):
         # Arquivos das janelas
         self.arquivos = {
             "inicio": "MainJanela.ui",
-            #"albuns": "AlbumJanela.ui",
-
-            # "artistas": "ArtistaJanela.ui",
-            # "generos": "GeneroJanela.ui",
-            # "historico": "HistoricoJanela.ui",
-            # "musicas": "MusicaJanela.ui",
-            # "musicas_playlist": "PlaylistMusicaJanela.ui",
-            # "playlists": "PlaylistJanela.ui",
-            "usuarios": "UsuarioJanela.ui"
+            "artistas": "ArtistaJanela.ui",
+            "usuarios": "UsuarioJanela.ui",
+            "generos": "GeneroJanela.ui",
+            "playlists": "PlaylistJanela.ui",
+            "albuns": "AlbumJanela.ui",
+            "musicas": "MusicaJanela.ui",
+            "musicas_playlist": "Playlist_MusicaJanela.ui",
+            "historico": "HistoricoJanela.ui",
         }
 
         self.janelas = {}
@@ -45,15 +52,34 @@ class GerenciadorJanelas(QObject):
                     f"{self.loader.errorString()}"
                 )
 
-            if janela is None:
-                raise RuntimeError(
-                    f"Erro ao carregar {arquivo}"
-                )
-
             self.janelas[nome] = janela
+
+        # Inicializar as classes específicas
         self.usuario = UsuarioJanela(
             self.janelas["usuarios"]
         )
+        self.artista = ArtistaJanela(
+            self.janelas["artistas"]
+        )
+        self.genero = GeneroJanela(
+            self.janelas["generos"]
+        )
+        self.playlist = PlaylistJanela(
+            self.janelas["playlists"]
+        )
+        self.album = AlbumJanela(
+            self.janelas["albuns"]
+        )
+        self.musica = MusicaJanela(
+            self.janelas["musicas"]
+        )
+        self.playlist_musica = PlaylistMusicaJanela(
+            self.janelas["musicas_playlist"]
+        )
+        self.historico = HistoricoReproducaoJanela(
+            self.janelas["historico"]
+        )
+
         self.conectar_menus()
 
     def conectar(self, origem, acao, destino):
@@ -73,26 +99,57 @@ class GerenciadorJanelas(QObject):
     def conectar_menus(self):
 
         # Menu da janela principal
-        # self.conectar("inicio", "actionAlbuns", "albuns")
-        # self.conectar("inicio", "actionArtistas", "artistas")
-        # self.conectar("inicio", "actionGeneros", "generos")
-        # self.conectar("inicio", "actionHistorico", "historico")
-        # self.conectar("inicio", "actionMusicas", "musicas")
-        # self.conectar("inicio", "actionMusicasPlaylist", "musicas_playlist")
-        # self.conectar("inicio", "actionPlaylists", "playlists")
-        self.conectar("inicio", "actionUsuarios", "usuarios")
+        self.conectar(
+            "inicio", "actionArtistas", "artistas"
+        )
+        self.conectar(
+            "inicio", "actionUsuarios", "usuarios"
+        )
+        self.conectar(
+            "inicio", "actionGeneros", "generos"
+        )
+        self.conectar(
+            "inicio", "actionPlaylists", "playlists"
+        )
+        self.conectar(
+            "inicio", "actionAlbuns", "albuns"
+        )
+        self.conectar(
+            "inicio", "actionMusicas", "musicas"
+        )
+        self.conectar(
+            "inicio", "actionMusicasPlaylist", "musicas_playlist"
+        )
+        self.conectar(
+            "inicio","actionHistoricoReproducao","historico"
+        )
 
         # Retorno para a janela principal
-        # self.conectar("albuns", "actionInicio", "inicio")
-
-        # self.conectar("artistas", "actionInicio", "inicio")
-        # self.conectar("generos", "actionInicio", "inicio")
-        # self.conectar("historico", "actionInicio", "inicio")
-        # self.conectar("musicas", "actionInicio", "inicio")
-        # self.conectar("musicas_playlist", "actionInicio", "inicio")
-        # self.conectar("playlists", "actionInicio", "inicio")
-        self.conectar("usuarios", "actionInicio", "inicio")
-
+        self.conectar(
+            "artistas", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "usuarios", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "generos", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "playlists", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "albuns", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "musicas", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "musicas_playlist", "actionInicio", "inicio"
+        )
+        self.conectar(
+            "historico","actionInicio","inicio"
+        )
+            
     def abrir(self, nome):
         proxima = self.janelas[nome]
 
