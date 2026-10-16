@@ -12,6 +12,7 @@ from src.Interface.janelas.album_janela import AlbumJanela
 from src.Interface.janelas.musica_janela import MusicaJanela
 from src.Interface.janelas.playlist_musica_janela import PlaylistMusicaJanela
 from src.Interface.janelas.historico_reproducao_janela import HistoricoReproducaoJanela
+import src.Interface.recursos_rc
 
 class GerenciadorJanelas(QObject):
 
