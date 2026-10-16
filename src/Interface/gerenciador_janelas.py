@@ -150,12 +150,35 @@ class GerenciadorJanelas(QObject):
             "historico","actionInicio","inicio"
         )
             
+    
     def abrir(self, nome):
-        proxima = self.janelas[nome]
+        # Atualiza as opções das chaves estrangeiras
+        # sempre que a janela for aberta.
+        atualizadores = {
+            "playlists": self.playlist.carregar_usuarios,
+            "albuns": self.album.carregar_artistas,
+            "musicas": lambda: (
+                self.musica.carregar_albuns(),
+                self.musica.carregar_generos()
+            ),
+            "musicas_playlist": lambda: (
+                self.playlist_musica.carregar_playlists(),
+                self.playlist_musica.carregar_musicas()
+            ),
+            "historico": lambda: (
+                self.historico.carregar_usuarios(),
+                self.historico.carregar_musicas()
+            )
+        }
 
+        if nome in atualizadores:
+            atualizadores[nome]()
+
+        proxima = self.janelas[nome]
         proxima.show()
 
         if self.atual is not None and self.atual != proxima:
             self.atual.hide()
 
         self.atual = proxima
+
